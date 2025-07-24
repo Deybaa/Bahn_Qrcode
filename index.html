@@ -30,6 +30,12 @@
     p {
       line-height: 1.4;
     }
+    a {
+      display: inline-block;
+      margin: 0.5rem 0;
+      text-decoration: none;
+      color: #0066cc;
+    }
   </style>
   <script>
     const androidURL = "https://play.google.com/store/apps/details?id=com.bahn.app";
@@ -44,16 +50,17 @@
     } else if (isAndroid) {
       window.location.replace(androidURL);
     }
-    // Si ce n'est ni iOS ni Android, on reste sur la page
+    // Les autres plateformes restent sur la page
   </script>
 </head>
 <body>
   <div class="card">
     <h1>Téléchargement de l’application</h1>
-    <p>Si vous n’êtes pas redirigé automatiquement,<br>veuillez choisir votre plateforme :</p>
+    <p>Vous serez redirigé automatiquement selon votre appareil.</p>
+    <p>Si ce n'est pas le cas, utilisez les liens ci-dessous :</p>
     <p>
-      <a href="https://apps.apple.com/fr/app/bahn/id6747998735">📱 iOS (App Store)</a><br>
-      <a href="https://play.google.com/store/apps/details?id=com.bahn.app">🤖 Android (Google Play)</a>
+      <a href="https://apps.apple.com/fr/app/bahn/id6747998735">📱 Télécharger pour iPhone (iOS)</a><br>
+      <a href="https://play.google.com/store/apps/details?id=com.bahn.app">🤖 Télécharger pour Android</a>
     </p>
   </div>
 </body>
