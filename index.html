@@ -5,29 +5,56 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Téléchargement de l’application</title>
   <style>
-    body{font-family:system-ui,sans-serif;display:flex;justify-content:center;align-items:center;
-         min-height:100vh;margin:0;background:#f9f9f9;text-align:center;padding:1rem;}
-    .card{background:#fff;border-radius:1rem;box-shadow:0 4px 16px rgba(0,0,0,.1);padding:2rem;max-width:26rem;}
-    h1{font-size:1.5rem;margin-bottom:1rem;}
-    p{line-height:1.4;}
+    body {
+      font-family: system-ui, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #f9f9f9;
+      text-align: center;
+      padding: 1rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,.1);
+      padding: 2rem;
+      max-width: 26rem;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      line-height: 1.4;
+    }
   </style>
   <script>
-    // URL Android : à adapter
     const androidURL = "https://play.google.com/store/apps/details?id=com.bahn.app";
+    const iosURL = "https://apps.apple.com/fr/app/bahn/id6747998735";
+
     const ua = navigator.userAgent || navigator.vendor || window.opera;
     const isiOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+    const isAndroid = /android/i.test(ua);
 
-    if (!isiOS) {
-      // Rediriger immédiatement tout sauf iOS vers Google Play
+    if (isiOS) {
+      window.location.replace(iosURL);
+    } else if (isAndroid) {
       window.location.replace(androidURL);
     }
+    // Si ce n'est ni iOS ni Android, on reste sur la page
   </script>
 </head>
 <body>
   <div class="card">
-    <h1>Version iOS bientôt disponible !</h1>
-    <p>La version iPhone/iPad est en cours de validation.<br>
-       Merci de votre patience 😊</p>
+    <h1>Téléchargement de l’application</h1>
+    <p>Si vous n’êtes pas redirigé automatiquement,<br>veuillez choisir votre plateforme :</p>
+    <p>
+      <a href="https://apps.apple.com/fr/app/bahn/id6747998735">📱 iOS (App Store)</a><br>
+      <a href="https://play.google.com/store/apps/details?id=com.bahn.app">🤖 Android (Google Play)</a>
+    </p>
   </div>
 </body>
 </html>
